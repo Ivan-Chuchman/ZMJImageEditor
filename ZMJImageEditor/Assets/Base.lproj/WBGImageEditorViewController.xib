@@ -66,17 +66,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toj-tM-hDH">
                             <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li1-F3-HD7">
-                                    <rect key="frame" x="309" y="0.0" width="66" height="49"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <state key="normal" title="发送">
-                                        <color key="titleColor" red="0.15686274509803921" green="0.60784313725490191" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="sendAction:" destination="-1" eventType="touchUpInside" id="9Z9-uw-HJK"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vif-ym-mAZ">
                                     <rect key="frame" x="30" y="8" width="32" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,20 +101,12 @@
                                         <action selector="paperAction:" destination="-1" eventType="touchUpInside" id="uSp-LB-Pto"/>
                                     </connections>
                                 </button>
-                            </subviews>
-                            <color key="backgroundColor" red="0.086274509803921567" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.88" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="49" id="tEl-cY-7Xw"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKW-ZA-nXo">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeV-aj-vVt">
-                                    <rect key="frame" x="317" y="0.0" width="58" height="64"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeV-aj-vVt">
+                                    <rect key="frame" x="309" y="0.0" width="66" height="49"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="66" id="V27-3O-POA"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <inset key="titleEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" title="撤销">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -136,9 +117,24 @@
                                         <action selector="undoAction:" destination="-1" eventType="touchUpInside" id="MFr-PX-eOZ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-fP-iEK">
-                                    <rect key="frame" x="0.0" y="0.0" width="58" height="64"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </subviews>
+                            <color key="backgroundColor" red="0.086274509803921567" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.88" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="yeV-aj-vVt" secondAttribute="bottom" id="9IM-Ts-p66"/>
+                                <constraint firstAttribute="trailing" secondItem="yeV-aj-vVt" secondAttribute="trailing" id="eLW-TG-czH"/>
+                                <constraint firstItem="yeV-aj-vVt" firstAttribute="top" secondItem="toj-tM-hDH" secondAttribute="top" id="gFA-oG-UNO"/>
+                                <constraint firstAttribute="height" constant="49" id="tEl-cY-7Xw"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKW-ZA-nXo">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-fP-iEK">
+                                    <rect key="frame" x="5" y="0.0" width="58" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="4vm-Kb-WqZ"/>
+                                        <constraint firstAttribute="width" constant="58" id="Eqr-aq-kLh"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <inset key="titleEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" title="返回">
@@ -151,10 +147,29 @@
                                         <action selector="backAction:" destination="-1" eventType="touchUpInside" id="Ppf-jM-RIP"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li1-F3-HD7">
+                                    <rect key="frame" x="312" y="0.0" width="58" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="58" id="PpE-AW-RXe"/>
+                                        <constraint firstAttribute="height" constant="64" id="sCv-mj-52S"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <inset key="titleEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="发送">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sendAction:" destination="-1" eventType="touchUpInside" id="9Z9-uw-HJK"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.086274509803921567" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.88" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="Li1-F3-HD7" firstAttribute="top" secondItem="vKW-ZA-nXo" secondAttribute="top" id="Gd1-4G-UMZ"/>
+                                <constraint firstAttribute="trailing" secondItem="Li1-F3-HD7" secondAttribute="trailing" constant="5" id="Lll-Sj-hSR"/>
+                                <constraint firstItem="U1E-fP-iEK" firstAttribute="leading" secondItem="vKW-ZA-nXo" secondAttribute="leading" constant="5" id="b3p-OT-0BL"/>
                                 <constraint firstAttribute="height" constant="64" id="g2k-gl-jyQ"/>
+                                <constraint firstItem="U1E-fP-iEK" firstAttribute="top" secondItem="vKW-ZA-nXo" secondAttribute="top" id="i6w-KR-pZk"/>
                             </constraints>
                         </view>
                     </subviews>
