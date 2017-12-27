@@ -291,7 +291,9 @@
 		150752E45B3282F65E6B98464856E8B4 /* YYCategories.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCategories.xcconfig; sourceTree = "<group>"; };
 		155ACC000F4DD9610B044D2C04D51153 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		1700E22D100D90D5715F833515B356C3 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		171C77BA1FF3ACBF0036B3D8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/WBGImageEditorViewController.strings"; sourceTree = "<group>"; };
+		171C77C01FF3B2560036B3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WBGImageEditorViewController.xib; sourceTree = "<group>"; };
+		171C77C21FF3B29C0036B3D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WBGImageEditorViewController.strings; sourceTree = "<group>"; };
+		171C77C41FF3B2A70036B3D8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/WBGImageEditorViewController.strings"; sourceTree = "<group>"; };
 		1799062D1FA9BF09097B87119620029C /* Pods-ZMJImageEditor_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZMJImageEditor_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1826AE8F4E141065380C77DF657F8932 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19143FD0AAF084A1A7DCA23A13643C18 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
@@ -399,7 +401,6 @@
 		920D69C27FA372D2061D159565946FC2 /* Pods-ZMJImageEditor_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZMJImageEditor_Example.release.xcconfig"; sourceTree = "<group>"; };
 		93744308B1F0C1743C0665054003A210 /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93C594BFF62B464248B1AC5BF26B1A98 /* WBGImageEditorViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = WBGImageEditorViewController.xib; path = Base.lproj/WBGImageEditorViewController.xib; sourceTree = "<group>"; };
 		93FEC4AB017C2B759A1500D5C8D85CC1 /* UIBezierPath+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+YYAdd.h"; path = "YYCategories/UIKit/UIBezierPath+YYAdd.h"; sourceTree = "<group>"; };
 		94BE14B8B91F6C80F1CE9C3357C6DA26 /* WBGBaseKeyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WBGBaseKeyboard.h; sourceTree = "<group>"; };
 		97A61E9271A3A9B148449F45FBCB3AE3 /* NSBundle+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+YYAdd.m"; path = "YYCategories/Foundation/NSBundle+YYAdd.m"; sourceTree = "<group>"; };
@@ -468,7 +469,6 @@
 		D8E8AD83EFCB5D89E96F9CACE74A6421 /* Pods-ZMJImageEditor_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZMJImageEditor_Example.modulemap"; sourceTree = "<group>"; };
 		DAE00C0F89148D59056485BF40DBC371 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		DF7F269E96B5A9E498D77CC9F66040EF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		E0AE2059E754D92E3D1B63F76DE2817A /* WBGImageEditorViewController.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = WBGImageEditorViewController.strings; path = en.lproj/WBGImageEditorViewController.strings; sourceTree = "<group>"; };
 		E1633CD66CE003869D3D1AE0F5914F07 /* CALayer+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+YYAdd.m"; path = "YYCategories/Quartz/CALayer+YYAdd.m"; sourceTree = "<group>"; };
 		E19BF895D575C2A4066DD32627A0FB49 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		E26AF1D5BB025331030942C138277790 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
@@ -1289,6 +1289,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 613F2DEBD24075B3D5D8782FFA6EDA0C /* Products */;
@@ -1502,9 +1504,9 @@
 		36D5376C074DCBED861B55FCB76FB820 /* WBGImageEditorViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E0AE2059E754D92E3D1B63F76DE2817A /* WBGImageEditorViewController.strings */,
-				93C594BFF62B464248B1AC5BF26B1A98 /* WBGImageEditorViewController.xib */,
-				171C77BA1FF3ACBF0036B3D8 /* zh-Hans */,
+				171C77C01FF3B2560036B3D8 /* Base */,
+				171C77C21FF3B29C0036B3D8 /* en */,
+				171C77C41FF3B2A70036B3D8 /* zh-Hans */,
 			);
 			name = WBGImageEditorViewController.xib;
 			path = .;
