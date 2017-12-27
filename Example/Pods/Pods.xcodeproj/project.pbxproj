@@ -293,7 +293,6 @@
 		1700E22D100D90D5715F833515B356C3 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		171C77C01FF3B2560036B3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WBGImageEditorViewController.xib; sourceTree = "<group>"; };
 		171C77C21FF3B29C0036B3D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WBGImageEditorViewController.strings; sourceTree = "<group>"; };
-		171C77C41FF3B2A70036B3D8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/WBGImageEditorViewController.strings"; sourceTree = "<group>"; };
 		1799062D1FA9BF09097B87119620029C /* Pods-ZMJImageEditor_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZMJImageEditor_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1826AE8F4E141065380C77DF657F8932 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19143FD0AAF084A1A7DCA23A13643C18 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
@@ -1506,7 +1505,6 @@
 			children = (
 				171C77C01FF3B2560036B3D8 /* Base */,
 				171C77C21FF3B29C0036B3D8 /* en */,
-				171C77C41FF3B2A70036B3D8 /* zh-Hans */,
 			);
 			name = WBGImageEditorViewController.xib;
 			path = .;
