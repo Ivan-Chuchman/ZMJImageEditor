@@ -160,6 +160,10 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
         originFrame.origin.x = idx == 0 ?(idx + 1) * 30.f : (idx + 1) * 30.f + originFrame.size.width * idx;
         button.frame = originFrame;
     }];
+    
+    if (curComponent == (WBGImageEditorTextComponent | WBGImageEditorColorPanComponent)) {
+        [self textAction:nil];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -739,6 +743,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
 @property (weak, nonatomic) IBOutlet ColorfullButton *blueButton;
 @property (weak, nonatomic) IBOutlet ColorfullButton *pinkButton;
 @property (weak, nonatomic) IBOutlet ColorfullButton *whiteButton;
+@property (weak, nonatomic) IBOutlet ColorfullButton *blackButton;
 
 @end
 
