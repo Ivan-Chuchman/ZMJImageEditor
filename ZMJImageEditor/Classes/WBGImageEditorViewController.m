@@ -143,6 +143,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     
     //获取自定制组件 - fecth custom config
     [self configCustomComponent];
+    [self.colorPan selectColorButtonForColor:self.colorPan.currentColor];
 }
 
 - (void)configCustomComponent {
@@ -793,6 +794,14 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
             [[NSNotificationCenter defaultCenter] postNotificationName:kColorPanNotificaiton object:self.currentColor];
         } else {
             button.isUse = NO;
+        }
+    }
+}
+
+- (void)selectColorButtonForColor:(UIColor*)color {
+    for (ColorfullButton *button in self.colorButtons) {
+        if (button.color.CGColor == color.CGColor) {
+            [self buttonAction:button];
         }
     }
 }

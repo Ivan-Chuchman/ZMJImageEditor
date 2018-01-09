@@ -65,7 +65,7 @@
 }
 
 - (UIColor *)imageEditorDefaultColor {
-    return UIColor.redColor;
+    return UIColor.whiteColor;
 }
 
 - (NSNumber *)imageEditorDrawPathWidth {
