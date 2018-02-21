@@ -111,9 +111,9 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     
     self.undoButton.hidden = YES;
     
-    self.colorPan.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 60, 100, self.colorPan.bounds.size.width, self.colorPan.bounds.size.height);
+//    self.colorPan.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 60, 100, self.colorPan.bounds.size.width, self.colorPan.bounds.size.height);
     self.colorPan.dataSource = self.dataSource;
-    [self.view addSubview:_colorPan];
+    [self.bottomBar addSubview:_colorPan];
     
     [self initImageScrollView];
     
@@ -158,9 +158,13 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     
     [valibleCompoment enumerateObjectsUsingBlock:^(UIButton * _Nonnull button, NSUInteger idx, BOOL * _Nonnull stop) {
         CGRect originFrame = button.frame;
-        originFrame.origin.x = idx == 0 ?(idx + 1) * 30.f : (idx + 1) * 30.f + originFrame.size.width * idx;
+        originFrame.origin.x = idx == 0 ?(idx + 1) * 10.f : (idx + 1) * 10.f + originFrame.size.width * idx;
         button.frame = originFrame;
     }];
+    
+    CGRect lastBtnFrame = ((UIView *)[valibleCompoment lastObject]).frame;
+    self.colorPan.frame = CGRectMake(CGRectGetMaxX(lastBtnFrame) + 10, 0, [UIScreen mainScreen].bounds.size.width - (CGRectGetMaxX(lastBtnFrame) + 10), 49);
+    [self.bottomBar bringSubviewToFront:self.colorPan];
     
     if (curComponent == (WBGImageEditorTextComponent | WBGImageEditorColorPanComponent)) {
         [self textAction:nil];
@@ -733,18 +737,14 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
 @end
 
 #pragma mark - Class WBGWColorPan
+#import "UIGradientSlider/UIGradientSlider.h"
 @interface WBGColorPan ()
 @property (nonatomic, strong) UIColor *currentColor;
 @property (strong, nonatomic) IBOutletCollection(ColorfullButton) NSArray *colorButtons;
 
-@property (weak, nonatomic) IBOutlet ColorfullButton *redButton;
-@property (weak, nonatomic) IBOutlet ColorfullButton *orangeButton;
-@property (weak, nonatomic) IBOutlet ColorfullButton *yellowButton;
-@property (weak, nonatomic) IBOutlet ColorfullButton *greenButton;
-@property (weak, nonatomic) IBOutlet ColorfullButton *blueButton;
-@property (weak, nonatomic) IBOutlet ColorfullButton *pinkButton;
 @property (weak, nonatomic) IBOutlet ColorfullButton *whiteButton;
 @property (weak, nonatomic) IBOutlet ColorfullButton *blackButton;
+@property (weak, nonatomic) IBOutlet UIGradientSlider *colorSlider;
 
 @end
 
@@ -765,6 +765,23 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
         //[self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panSelectColor:)]];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    self.colorSlider.actionBlock = ^(UIGradientSlider* slider, CGFloat value, BOOL endTracking) {
+        [CATransaction begin];
+        [CATransaction setValue:@YES forKey: kCATransactionDisableActions];
+        slider.thumbColor = slider.valueColor;
+        [CATransaction commit];
+        
+        [self deselectColorButtons];
+        [self selectColorSlider];
+        self.currentColor = self.colorSlider.valueColor;
+    };
+    self.colorSlider.thickness = 28;
+    //  set thumb size
+    [self deselectColorSlider];
+    self.colorSlider.thumbColor = self.colorSlider.valueColor;
 }
 
 - (UIColor *)currentColor {
@@ -789,6 +806,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     
     for (ColorfullButton *button in _colorButtons) {
         if (button == theBtns) {
+            [self deselectColorSlider];
             button.isUse = YES;
             self.currentColor = theBtns.color;
             [[NSNotificationCenter defaultCenter] postNotificationName:kColorPanNotificaiton object:self.currentColor];
@@ -829,6 +847,22 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
         if (CGRectContainsPoint(rect, touchPoint) && button.isUse == NO) {
             [self buttonAction:button];
         }
+    }
+}
+
+- (void)selectColorSlider {
+    self.colorSlider.thumbBorderWidth = 1 + 3;
+    self.colorSlider.thumbSize = 28 + 3 * 2;
+}
+
+- (void)deselectColorSlider {
+    self.colorSlider.thumbBorderWidth = 1;
+    self.colorSlider.thumbSize = 28;
+}
+
+- (void)deselectColorButtons {
+    for (ColorfullButton *button in _colorButtons) {
+        button.isUse = NO;
     }
 }
 

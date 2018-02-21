@@ -26,6 +26,8 @@
 		12B75FC68FCCFE81C578CDF07A3CB6D2 /* YYCategoriesMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E2501C15009A6BCDF5FBCFCA65CFA4 /* YYCategoriesMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		134956DD8D77170A84CA0B6777E29514 /* NSNotificationCenter+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 55152A3A0E9B368F1EBF268044ECC842 /* NSNotificationCenter+YYAdd.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		155B7B5B6B039BAB5105E2C9B88D8A8B /* UIDevice+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3958655A0F91427F97306A987A5C26 /* UIDevice+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		171CAE87203C8D8C0008604B /* UIGradientSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CAE85203C8D8C0008604B /* UIGradientSlider.h */; };
+		171CAE88203C8D8C0008604B /* UIGradientSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CAE86203C8D8C0008604B /* UIGradientSlider.m */; };
 		184FC8F2D1E548C5B7129E27276F030A /* UITableView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = E551C87B74BDDA432FADDE63588C8AD8 /* UITableView+YYAdd.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		187737A2D18B069C0A3A9A696F4FB7BC /* UIDevice+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4430B2E8326001C966F35A2BD3090 /* UIDevice+YYAdd.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1B92107FFBB64E9AE5B1FF0565D5B995 /* NSKeyedUnarchiver+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = FC73FFFD8B1F74022DE9E404F650264E /* NSKeyedUnarchiver+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -293,6 +295,8 @@
 		1700E22D100D90D5715F833515B356C3 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		171C77C01FF3B2560036B3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WBGImageEditorViewController.xib; sourceTree = "<group>"; };
 		171C77C21FF3B29C0036B3D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WBGImageEditorViewController.strings; sourceTree = "<group>"; };
+		171CAE85203C8D8C0008604B /* UIGradientSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGradientSlider.h; sourceTree = "<group>"; };
+		171CAE86203C8D8C0008604B /* UIGradientSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGradientSlider.m; sourceTree = "<group>"; };
 		1799062D1FA9BF09097B87119620029C /* Pods-ZMJImageEditor_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZMJImageEditor_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1826AE8F4E141065380C77DF657F8932 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19143FD0AAF084A1A7DCA23A13643C18 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
@@ -592,6 +596,15 @@
 			);
 			name = "Pods-ZMJImageEditor_Example";
 			path = "Target Support Files/Pods-ZMJImageEditor_Example";
+			sourceTree = "<group>";
+		};
+		171CAE84203C8D4F0008604B /* UIGradientSlider */ = {
+			isa = PBXGroup;
+			children = (
+				171CAE85203C8D8C0008604B /* UIGradientSlider.h */,
+				171CAE86203C8D8C0008604B /* UIGradientSlider.m */,
+			);
+			path = UIGradientSlider;
 			sourceTree = "<group>";
 		};
 		19041ABBD6C630E222DA3DD8837DADB0 /* Support Files */ = {
@@ -964,6 +977,7 @@
 		D118CBEFD257ED28B0AB114A36450EE9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				171CAE84203C8D4F0008604B /* UIGradientSlider */,
 				5210D435EDA6C6A9428FBF7A8E22371D /* ColorfullButton.h */,
 				6738838521BF8C1CAA3DE79E480D1782 /* ColorfullButton.m */,
 				99405327CD382B2A6DEB3FB335D161AA /* UIColor+TLChat.h */,
@@ -1075,6 +1089,7 @@
 				DD717FB73ADFC54B16C0032DDDBF47C4 /* WBGMoreKeyboard+CollectionView.h in Headers */,
 				B7C1EF9C303B8D01118AD16FAB5F7319 /* WBGMoreKeyboard.h in Headers */,
 				2499D897D7D6E31AB82279497D56F038 /* WBGMoreKeyboardCell.h in Headers */,
+				171CAE87203C8D8C0008604B /* UIGradientSlider.h in Headers */,
 				A8D5AE3C230BAFF85E805AD7D191189B /* WBGMoreKeyboardDelegate.h in Headers */,
 				32A85702A4AA5AF97C5F6B136DD181A9 /* WBGMoreKeyboardItem.h in Headers */,
 				45F257B726793978A68338F69E151EB1 /* WBGTextTool.h in Headers */,
@@ -1338,6 +1353,7 @@
 				C8712EAF146627C7A2BF73B98E8E300E /* TOCropViewControllerLocalizable.strings in Sources */,
 				A71B9125160A47B0145944DCD7A4798D /* TOCropViewControllerLocalizable.strings in Sources */,
 				B46BA8501FAB0109B6C1B0B9FC548918 /* TOCropViewControllerLocalizable.strings in Sources */,
+				171CAE88203C8D8C0008604B /* UIGradientSlider.m in Sources */,
 				DB0DD9C3B0CFCDC7880F8B029D82A165 /* TOCropViewControllerLocalizable.strings in Sources */,
 				BC20E6088A366C86BC9C339939012576 /* TOCropViewControllerLocalizable.strings in Sources */,
 				45C56D89B2FA9A8D1823045A4344E80A /* TOCropViewControllerLocalizable.strings in Sources */,

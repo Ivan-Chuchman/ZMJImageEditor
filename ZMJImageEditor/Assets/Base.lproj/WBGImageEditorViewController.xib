@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +15,7 @@
                 <outlet property="bottomBar" destination="toj-tM-hDH" id="aaz-UD-NrS"/>
                 <outlet property="bottomBarBottom" destination="UO5-vP-LGM" id="i97-CY-8ik"/>
                 <outlet property="clipButton" destination="PFB-Ig-Llj" id="Sdg-B5-Hzf"/>
-                <outlet property="colorPan" destination="sUm-KM-2Ao" id="aBq-pe-bzS"/>
+                <outlet property="colorPan" destination="iES-fG-2ea" id="ByT-XE-t68"/>
                 <outlet property="imageView" destination="L0E-Hz-dO7" id="8Uo-zs-uHX"/>
                 <outlet property="panButton" destination="vif-ym-mAZ" id="dhq-qL-UOU"/>
                 <outlet property="paperButton" destination="dR4-MJ-4Kq" id="ljA-cj-EGo"/>
@@ -129,15 +128,15 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKW-ZA-nXo">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-fP-iEK">
-                                    <rect key="frame" x="5" y="0.0" width="58" height="64"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-fP-iEK">
+                                    <rect key="frame" x="0.0" y="0.0" width="58" height="64"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="64" id="4vm-Kb-WqZ"/>
                                         <constraint firstAttribute="width" constant="58" id="Eqr-aq-kLh"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <inset key="titleEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="Back">
+                                    <inset key="imageEdgeInsets" minX="-10" minY="14" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" image="close">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="disabled">
@@ -167,7 +166,7 @@
                             <constraints>
                                 <constraint firstItem="Li1-F3-HD7" firstAttribute="top" secondItem="vKW-ZA-nXo" secondAttribute="top" id="Gd1-4G-UMZ"/>
                                 <constraint firstAttribute="trailing" secondItem="Li1-F3-HD7" secondAttribute="trailing" constant="5" id="Lll-Sj-hSR"/>
-                                <constraint firstItem="U1E-fP-iEK" firstAttribute="leading" secondItem="vKW-ZA-nXo" secondAttribute="leading" constant="5" id="b3p-OT-0BL"/>
+                                <constraint firstItem="U1E-fP-iEK" firstAttribute="leading" secondItem="vKW-ZA-nXo" secondAttribute="leading" id="b3p-OT-0BL"/>
                                 <constraint firstAttribute="height" constant="64" id="g2k-gl-jyQ"/>
                                 <constraint firstItem="U1E-fP-iEK" firstAttribute="top" secondItem="vKW-ZA-nXo" secondAttribute="top" id="i6w-KR-pZk"/>
                             </constraints>
@@ -190,144 +189,84 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="H4n-yc-FcR" firstAttribute="trailing" secondItem="1m7-DB-IxR" secondAttribute="trailing" id="5Xp-Ud-dYk"/>
-                <constraint firstItem="H4n-yc-FcR" firstAttribute="leading" secondItem="1m7-DB-IxR" secondAttribute="leading" id="T6y-gH-cJm"/>
+                <constraint firstItem="H4n-yc-FcR" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="5Xp-Ud-dYk"/>
+                <constraint firstItem="H4n-yc-FcR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="T6y-gH-cJm"/>
                 <constraint firstItem="H4n-yc-FcR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wor-oY-6q8"/>
-                <constraint firstItem="H4n-yc-FcR" firstAttribute="bottom" secondItem="1m7-DB-IxR" secondAttribute="bottom" id="ylf-ys-XpV"/>
+                <constraint firstItem="H4n-yc-FcR" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="ylf-ys-XpV"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="1m7-DB-IxR"/>
             <point key="canvasLocation" x="-25.5" y="41.5"/>
         </view>
-        <view contentMode="scaleToFill" misplaced="YES" id="sUm-KM-2Ao" customClass="WBGColorPan">
-            <rect key="frame" x="0.0" y="0.0" width="58" height="240"/>
+        <view contentMode="scaleToFill" id="iES-fG-2ea" customClass="WBGColorPan">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taZ-gA-Bjr" userLabel="background">
-                    <rect key="frame" x="16" y="12" width="26" height="237"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8j-bX-ueh" userLabel="background">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                     <subviews>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvM-QN-XqK" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="29" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" red="1" green="0.57647058823529407" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="9"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="x8i-QE-wxO"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeF-yt-Z8j" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="59" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" red="1" green="0.96078431372549022" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="9"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="Lea-UL-gb3"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euk-3V-EoP" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="89" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hy4-bh-WbD" customClass="ColorfullButton">
+                            <rect key="frame" x="40" y="4" width="40" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="m2y-Uy-c4S"/>
+                                <constraint firstAttribute="width" constant="40" id="oFt-RW-0jL"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="8.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" red="0.0" green="0.90588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="vBb-Fm-d0b"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-2V-GUp" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="119" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="8.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" red="0.098039215686274508" green="0.55686274509803924" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="02j-V5-DUd"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-ZX-cck" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="149" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="8.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" red="0.98039215686274506" green="0.1764705882352941" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="7ec-VQ-hpw"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zab-z4-Cs1" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="209" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="8.5"/>
+                                    <integer key="value" value="13"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
                                     <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="p8S-xb-54A"/>
-                            </connections>
                         </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5k-Nj-WzB" userLabel="Black Button" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="179" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFs-ic-Afl" customClass="ColorfullButton">
+                            <rect key="frame" x="0.0" y="4.5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Qa6-pb-Bvf"/>
+                                <constraint firstAttribute="height" constant="40" id="wiV-wL-tQT"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="8.5"/>
+                                    <integer key="value" value="13"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="DnF-Ct-nZC"/>
-                            </connections>
                         </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZF-rI-xHP" customClass="ColorfullButton">
-                            <rect key="frame" x="-17" y="0.0" width="60" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqk-Qa-KVK" customClass="UIGradientSlider">
+                            <rect key="frame" x="88" y="16" width="280" height="62"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="MEs-Js-rxF"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                    <real key="value" value="12"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                    <real key="value" value="9"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                    <real key="value" value="255"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                    <real key="value" value="127"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRainbow" value="YES"/>
                             </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonAction:" destination="sUm-KM-2Ao" eventType="touchUpInside" id="ZhU-vf-xyx"/>
-                            </connections>
-                        </button>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.086274509803921567" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.29799871575342468" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hy4-bh-WbD" firstAttribute="centerY" secondItem="p8j-bX-ueh" secondAttribute="centerY" id="0Gf-SQ-5ex"/>
+                        <constraint firstAttribute="trailing" secondItem="Nqk-Qa-KVK" secondAttribute="trailing" constant="5" id="8El-El-Nmt"/>
+                        <constraint firstItem="hy4-bh-WbD" firstAttribute="leading" secondItem="WFs-ic-Afl" secondAttribute="trailing" id="KVh-w9-BsH"/>
+                        <constraint firstItem="Nqk-Qa-KVK" firstAttribute="leading" secondItem="hy4-bh-WbD" secondAttribute="trailing" constant="10" id="WR6-R3-411"/>
+                        <constraint firstItem="WFs-ic-Afl" firstAttribute="leading" secondItem="p8j-bX-ueh" secondAttribute="leading" id="b0b-1u-fcD"/>
+                        <constraint firstItem="Nqk-Qa-KVK" firstAttribute="centerY" secondItem="p8j-bX-ueh" secondAttribute="centerY" id="inM-w3-d44"/>
+                        <constraint firstItem="WFs-ic-Afl" firstAttribute="centerY" secondItem="p8j-bX-ueh" secondAttribute="centerY" id="ydM-qz-jyN"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <real key="value" value="12.5"/>
@@ -335,35 +274,29 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <nil key="simulatedStatusBarMetrics"/>
+            <color key="backgroundColor" white="0.13" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="p8j-bX-ueh" firstAttribute="top" secondItem="iES-fG-2ea" secondAttribute="top" id="SOh-qz-EEj"/>
+                <constraint firstItem="p8j-bX-ueh" firstAttribute="leading" secondItem="iES-fG-2ea" secondAttribute="leading" id="Vua-nN-uYR"/>
+                <constraint firstAttribute="trailing" secondItem="p8j-bX-ueh" secondAttribute="trailing" id="hNH-vc-z1m"/>
+                <constraint firstAttribute="bottom" secondItem="p8j-bX-ueh" secondAttribute="bottom" id="zl9-aJ-Wba"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="eEE-RG-qgN"/>
             <connections>
-                <outlet property="blackButton" destination="n5k-Nj-WzB" id="JDj-Cq-6Ar"/>
-                <outlet property="blueButton" destination="hMN-2V-GUp" id="PMg-WS-yFm"/>
-                <outlet property="greenButton" destination="euk-3V-EoP" id="ZvG-lz-oJo"/>
-                <outlet property="orangeButton" destination="bvM-QN-XqK" id="OBW-P8-YLC"/>
-                <outlet property="pinkButton" destination="M7o-ZX-cck" id="N6Z-Eb-CTI"/>
-                <outlet property="redButton" destination="kZF-rI-xHP" id="1bc-OG-DJZ"/>
-                <outlet property="whiteButton" destination="zab-z4-Cs1" id="N7w-sT-oye"/>
-                <outlet property="yellowButton" destination="HeF-yt-Z8j" id="yVL-7X-fvF"/>
-                <outletCollection property="colorButtons" destination="kZF-rI-xHP" id="oBX-mt-AwY"/>
-                <outletCollection property="colorButtons" destination="bvM-QN-XqK" id="zWG-BQ-Lgd"/>
-                <outletCollection property="colorButtons" destination="HeF-yt-Z8j" id="AmV-gx-CJJ"/>
-                <outletCollection property="colorButtons" destination="euk-3V-EoP" id="jA0-a5-YUq"/>
-                <outletCollection property="colorButtons" destination="hMN-2V-GUp" id="ffX-bz-AiX"/>
-                <outletCollection property="colorButtons" destination="M7o-ZX-cck" id="uIM-Xx-XaI"/>
-                <outletCollection property="colorButtons" destination="zab-z4-Cs1" id="jwf-eL-abx"/>
-                <outletCollection property="colorButtons" destination="n5k-Nj-WzB" id="lRT-fh-T2Y"/>
+                <outlet property="blackButton" destination="WFs-ic-Afl" id="GYU-GO-2Io"/>
+                <outlet property="colorSlider" destination="Nqk-Qa-KVK" id="wqD-G0-n1g"/>
+                <outlet property="whiteButton" destination="hy4-bh-WbD" id="AnA-MQ-hzB"/>
+                <outletCollection property="colorButtons" destination="hy4-bh-WbD" id="0VL-tX-IZP"/>
+                <outletCollection property="colorButtons" destination="WFs-ic-Afl" id="1Vu-Ur-knQ"/>
             </connections>
-            <point key="canvasLocation" x="-476" y="42"/>
+            <point key="canvasLocation" x="-994.5" y="-227.5"/>
         </view>
     </objects>
     <resources>
         <image name="annotate" width="32" height="32"/>
         <image name="annotate_selected" width="32" height="32"/>
         <image name="clip" width="32" height="32"/>
+        <image name="close" width="18" height="18"/>
         <image name="paper" width="100" height="100"/>
         <image name="text" width="32" height="32"/>
         <image name="text_selected" width="32" height="32"/>

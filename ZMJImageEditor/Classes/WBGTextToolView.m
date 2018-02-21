@@ -62,16 +62,16 @@ static const CGFloat DELETEBUTTON_BOUNDS = 26.f;
         [self.image drawInRect:CGRectInset(rect, 21, 25)];
         return;
     }
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor grayColor]; //阴影颜色
-    shadow.shadowOffset= CGSizeMake(2, 2);//偏移量
-    shadow.shadowBlurRadius = 5;//模糊度
+//    NSShadow *shadow = [[NSShadow alloc] init];
+//    shadow.shadowColor = [UIColor whiteColor]; //阴影颜色
+//    shadow.shadowOffset= CGSizeMake(2, 2);//偏移量
+//    shadow.shadowBlurRadius = 5;//模糊度
     
     rect.origin = CGPointMake(1, 2);
     NSAttributedString *string = [[NSAttributedString alloc] initWithString:self.text
                                                                  attributes:@{NSForegroundColorAttributeName : self.textColor,
-                                                                              NSFontAttributeName : self.textFont,
-                                                                              NSShadowAttributeName: shadow}];
+                                                                              NSFontAttributeName : self.textFont}];
+//                                                                              NSShadowAttributeName: shadow}];
     [string drawInRect:CGRectInset(rect, 21, 25)];
     
 }

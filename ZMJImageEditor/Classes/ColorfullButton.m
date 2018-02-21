@@ -36,11 +36,18 @@ IB_DESIGNABLE
     UIGraphicsBeginImageContext(self.bounds.size);
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.frame = self.bounds;
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.bounds.size.width/2.f, self.bounds.size.height/2.f) radius:_isUse ? _radius+5: _radius startAngle:0 endAngle:2*M_PI clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.bounds.size.width/2.f, self.bounds.size.height/2.f) radius:_isUse ? _radius+2: _radius startAngle:0 endAngle:2*M_PI clockwise:YES];
     layer.fillColor = _color.CGColor;
     layer.allowsEdgeAntialiasing = YES;
     layer.backgroundColor = [UIColor clearColor].CGColor;
     if (_isUse) {
+        if ([_color isEqual:[UIColor whiteColor]]) {
+            layer.strokeColor = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
+        } else {
+            layer.strokeColor = [UIColor whiteColor].CGColor;
+        }
+        layer.lineWidth = 3.f;
+    } else {
         layer.strokeColor = [UIColor whiteColor].CGColor;
         layer.lineWidth = 2.f;
     }
