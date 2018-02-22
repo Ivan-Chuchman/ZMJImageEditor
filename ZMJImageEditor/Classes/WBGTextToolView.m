@@ -528,6 +528,7 @@ static WBGTextToolView *activeView = nil;
 - (BOOL)active
 {
 //    return !_deleteButton.hidden;
+    return NO;
 }
 
 - (void)sizeToFitWithMaxWidth:(CGFloat)width lineHeight:(CGFloat)lineHeight

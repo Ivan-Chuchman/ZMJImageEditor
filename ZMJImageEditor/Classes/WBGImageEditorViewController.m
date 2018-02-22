@@ -675,7 +675,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     if (showHud) {
         //ShowBusyTextIndicatorForView(self.view, @"生成图片中...", nil);
     }
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         CGFloat WS = self.imageView.width/ self.drawingView.width;
         CGFloat HS = self.imageView.height/ self.drawingView.height;
         
