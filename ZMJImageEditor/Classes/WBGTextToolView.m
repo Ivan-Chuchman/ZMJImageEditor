@@ -16,7 +16,7 @@ static const CGFloat MAX_FONT_SIZE = 50.0f;
 static const CGFloat MIN_TEXT_SCAL = 0.614f;
 static const CGFloat MAX_TEXT_SCAL = 4.0f;
 static const CGFloat LABEL_OFFSET  = 13.f;
-static const CGFloat DELETEBUTTON_BOUNDS = 26.f;
+//static const CGFloat DELETEBUTTON_BOUNDS = 26.f;
 
 @interface WBGTextToolOverlapContentView : UIView
 @property (nonatomic, copy  ) NSString *text;
@@ -146,7 +146,7 @@ static const CGFloat DELETEBUTTON_BOUNDS = 26.f;
 @implementation WBGTextToolView
 {
     WBGTextLabel  *_label;
-    UIButton *_deleteButton;
+//    UIButton *_deleteButton;
     
     CGFloat _scale;
     CGFloat _arg;
@@ -155,9 +155,9 @@ static const CGFloat DELETEBUTTON_BOUNDS = 26.f;
     CGFloat _initialArg;
     CGFloat _initialScale;
     
-    CALayer *rectLayer1;
-    CALayer *rectLayer2;
-    CALayer *rectLayer3;
+//    CALayer *rectLayer1;
+//    CALayer *rectLayer2;
+//    CALayer *rectLayer3;
     
     CGFloat _rotation;
 }
@@ -228,11 +228,11 @@ static WBGTextToolView *activeView = nil;
         }
         self.frame = CGRectMake(0, 0, _label.width + 2*LABEL_OFFSET, _label.height + 2*LABEL_OFFSET);
         
-        _deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_deleteButton setImage:[UIImage my_imageNamed:@"close_Text" inBundle:[NSBundle bundleForClass:self.class]] forState:UIControlStateNormal];
-        _deleteButton.frame = CGRectMake(0, 0, DELETEBUTTON_BOUNDS, DELETEBUTTON_BOUNDS);
-        [_deleteButton addTarget:self action:@selector(pushedDeleteBtn:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_deleteButton];
+//        _deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [_deleteButton setImage:[UIImage my_imageNamed:@"close_Text" inBundle:[NSBundle bundleForClass:self.class]] forState:UIControlStateNormal];
+//        _deleteButton.frame = CGRectMake(0, 0, DELETEBUTTON_BOUNDS, DELETEBUTTON_BOUNDS);
+//        [_deleteButton addTarget:self action:@selector(pushedDeleteBtn:) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:_deleteButton];
         
         _arg = 0;
         [self setScale:1];
@@ -413,19 +413,19 @@ static WBGTextToolView *activeView = nil;
 
 #pragma mark - Edit it again
 - (void)editTextAgain:(UITapGestureRecognizer *)recognizer {
-    //事件源
-    [self.textTool.editor editTextAgain];
-    self.textTool.isEditAgain = YES;
-    self.textTool.textView.textView.text = self.text;
-    self.textTool.textView.textView.font = self.font;
-    
-    __weak typeof (self)weakSelf = self;
-    self.textTool.editAgainCallback = ^(NSString *text){
-        weakSelf.text = text;
-        [weakSelf resizeSelf];
-        weakSelf.font = weakSelf.textTool.textView.textView.font;
-        weakSelf.fillColor = weakSelf.textTool.textView.textView.textColor;
-    };
+//    //事件源
+//    [self.textTool.editor editTextAgain];
+//    self.textTool.isEditAgain = YES;
+//    self.textTool.textView.textView.text = self.text;
+//    self.textTool.textView.textView.font = self.font;
+//
+//    __weak typeof (self)weakSelf = self;
+//    self.textTool.editAgainCallback = ^(NSString *text){
+//        weakSelf.text = text;
+//        [weakSelf resizeSelf];
+//        weakSelf.font = weakSelf.textTool.textView.textView.font;
+//        weakSelf.fillColor = weakSelf.textTool.textView.textView.textColor;
+//    };
     
 }
 
@@ -437,9 +437,9 @@ static WBGTextToolView *activeView = nil;
     self.bounds = CGRectMake(0, 0, _label.width + 2*LABEL_OFFSET, _label.height + 2*LABEL_OFFSET);
     _archerBGView.bounds = self.bounds;
     
-    rectLayer1.frame = CGRectMake(_label.width - 2 - _scale/2.f, - 2, 4, 4);
-    rectLayer2.frame = CGRectMake(_scale/2.f - 2, _scale/2.f + _label.height - 2, 4, 4);
-    rectLayer3.frame = CGRectMake(_label.width - 2 - _scale/2.f, _label.height - 2 - _scale/2.f, 4, 4);
+//    rectLayer1.frame = CGRectMake(_label.width - 2 - _scale/2.f, - 2, 4, 4);
+//    rectLayer2.frame = CGRectMake(_scale/2.f - 2, _scale/2.f + _label.height - 2, 4, 4);
+//    rectLayer3.frame = CGRectMake(_label.width - 2 - _scale/2.f, _label.height - 2 - _scale/2.f, 4, 4);
 }
 
 - (void)layoutSubviews {
@@ -462,33 +462,33 @@ static WBGTextToolView *activeView = nil;
     self.center = _archerBGView.center;
     
     _label.frame = CGRectMake(LABEL_OFFSET, LABEL_OFFSET, self.bounds.size.width - 2*LABEL_OFFSET, self.bounds.size.height - 2*LABEL_OFFSET);
-    {
-        [CATransaction begin];
-        [CATransaction setDisableActions:YES];
-        if (!rectLayer1) {
-            rectLayer1 = [CALayer layer];
-            rectLayer1.backgroundColor = [UIColor whiteColor].CGColor;
-            [_label.layer addSublayer:rectLayer1];
-        }
-        rectLayer1.frame = CGRectMake(_label.width - 2 - _scale/2.f, - 2, 4, 4);
-        
-        
-        if (!rectLayer2) {
-            rectLayer2 = [CALayer layer];
-            rectLayer2.backgroundColor = [UIColor whiteColor].CGColor;
-            [_label.layer addSublayer:rectLayer2];
-        }
-        rectLayer2.frame = CGRectMake(_scale/2.f - 2, _label.height - 2 - _scale/2.f, 4, 4);
-        
-        
-        if (!rectLayer3) {
-            rectLayer3 = [CALayer layer];
-            rectLayer3.backgroundColor = [UIColor whiteColor].CGColor;
-            [_label.layer addSublayer:rectLayer3];
-        }
-        rectLayer3.frame = CGRectMake(_label.width - 2 - _scale/2.f, _label.height - 2 - _scale/2.f, 4, 4);
-        [CATransaction commit];
-    }
+//    {
+//        [CATransaction begin];
+//        [CATransaction setDisableActions:YES];
+//        if (!rectLayer1) {
+//            rectLayer1 = [CALayer layer];
+//            rectLayer1.backgroundColor = [UIColor whiteColor].CGColor;
+//            [_label.layer addSublayer:rectLayer1];
+//        }
+//        rectLayer1.frame = CGRectMake(_label.width - 2 - _scale/2.f, - 2, 4, 4);
+//
+//
+//        if (!rectLayer2) {
+//            rectLayer2 = [CALayer layer];
+//            rectLayer2.backgroundColor = [UIColor whiteColor].CGColor;
+//            [_label.layer addSublayer:rectLayer2];
+//        }
+//        rectLayer2.frame = CGRectMake(_scale/2.f - 2, _label.height - 2 - _scale/2.f, 4, 4);
+//
+//
+//        if (!rectLayer3) {
+//            rectLayer3 = [CALayer layer];
+//            rectLayer3.backgroundColor = [UIColor whiteColor].CGColor;
+//            [_label.layer addSublayer:rectLayer3];
+//        }
+//        rectLayer3.frame = CGRectMake(_label.width - 2 - _scale/2.f, _label.height - 2 - _scale/2.f, 4, 4);
+//        [CATransaction commit];
+//    }
 }
 
 #pragma mark- Properties
@@ -497,19 +497,19 @@ static WBGTextToolView *activeView = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         [CATransaction begin];
         [CATransaction setDisableActions:YES];
-        _deleteButton.hidden = !active;
+//        _deleteButton.hidden = !active;
         _label.layer.borderWidth = (active) ? 1/_scale : 0;
         _label.layer.shadowColor = [UIColor grayColor].CGColor;
         _label.layer.shadowOffset= CGSizeMake(0, 0);
         _label.layer.shadowOpacity = .6f;
         _label.layer.shadowRadius = 2.f;
         
-        _deleteButton.layer.shadowColor = [UIColor grayColor].CGColor;
-        _deleteButton.layer.shadowOffset= CGSizeMake(0, 0);
-        _deleteButton.layer.shadowOpacity = .6f;
-        _deleteButton.layer.shadowRadius = 2.f;
-        
-        rectLayer1.hidden = rectLayer2.hidden = rectLayer3.hidden = !active;
+//        _deleteButton.layer.shadowColor = [UIColor grayColor].CGColor;
+//        _deleteButton.layer.shadowOffset= CGSizeMake(0, 0);
+//        _deleteButton.layer.shadowOpacity = .6f;
+//        _deleteButton.layer.shadowRadius = 2.f;
+//
+//        rectLayer1.hidden = rectLayer2.hidden = rectLayer3.hidden = !active;
         [CATransaction commit];
         
         if (active) {
@@ -527,7 +527,7 @@ static WBGTextToolView *activeView = nil;
 
 - (BOOL)active
 {
-    return !_deleteButton.hidden;
+//    return !_deleteButton.hidden;
 }
 
 - (void)sizeToFitWithMaxWidth:(CGFloat)width lineHeight:(CGFloat)lineHeight

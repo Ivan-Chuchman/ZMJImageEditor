@@ -80,7 +80,8 @@ static const NSInteger kTextMaxLimitNumber = 100;
     
     WBGTextToolView *view = [[WBGTextToolView alloc] initWithTool:self text:text font:self.textView.textView.font orImage:nil];
     view.fillColor = self.editor.colorPan.currentColor;
-    view.borderColor = [UIColor whiteColor];
+//    view.borderColor = [UIColor whiteColor];
+    view.borderColor = [UIColor clearColor];
     view.font = self.textView.textView.font;
     view.text = text;
     view.center = [self.editor.imageView.superview convertPoint:self.editor.imageView.center toView:self.editor.drawingView];
