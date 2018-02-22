@@ -28,6 +28,7 @@
 		155B7B5B6B039BAB5105E2C9B88D8A8B /* UIDevice+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3958655A0F91427F97306A987A5C26 /* UIDevice+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		171CAE87203C8D8C0008604B /* UIGradientSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CAE85203C8D8C0008604B /* UIGradientSlider.h */; };
 		171CAE88203C8D8C0008604B /* UIGradientSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CAE86203C8D8C0008604B /* UIGradientSlider.m */; };
+		1751D0A7203E0B6C004A1B72 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1751D09D203E0B6A004A1B72 /* OpenSans-Regular.ttf */; };
 		184FC8F2D1E548C5B7129E27276F030A /* UITableView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = E551C87B74BDDA432FADDE63588C8AD8 /* UITableView+YYAdd.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		187737A2D18B069C0A3A9A696F4FB7BC /* UIDevice+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4430B2E8326001C966F35A2BD3090 /* UIDevice+YYAdd.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1B92107FFBB64E9AE5B1FF0565D5B995 /* NSKeyedUnarchiver+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = FC73FFFD8B1F74022DE9E404F650264E /* NSKeyedUnarchiver+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -297,6 +298,7 @@
 		171C77C21FF3B29C0036B3D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WBGImageEditorViewController.strings; sourceTree = "<group>"; };
 		171CAE85203C8D8C0008604B /* UIGradientSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGradientSlider.h; sourceTree = "<group>"; };
 		171CAE86203C8D8C0008604B /* UIGradientSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGradientSlider.m; sourceTree = "<group>"; };
+		1751D09D203E0B6A004A1B72 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		1799062D1FA9BF09097B87119620029C /* Pods-ZMJImageEditor_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZMJImageEditor_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1826AE8F4E141065380C77DF657F8932 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19143FD0AAF084A1A7DCA23A13643C18 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
@@ -605,6 +607,14 @@
 				171CAE86203C8D8C0008604B /* UIGradientSlider.m */,
 			);
 			path = UIGradientSlider;
+			sourceTree = "<group>";
+		};
+		1751D097203E0B38004A1B72 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1751D09D203E0B6A004A1B72 /* OpenSans-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		19041ABBD6C630E222DA3DD8837DADB0 /* Support Files */ = {
@@ -977,6 +987,7 @@
 		D118CBEFD257ED28B0AB114A36450EE9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1751D097203E0B38004A1B72 /* Font */,
 				171CAE84203C8D4F0008604B /* UIGradientSlider */,
 				5210D435EDA6C6A9428FBF7A8E22371D /* ColorfullButton.h */,
 				6738838521BF8C1CAA3DE79E480D1782 /* ColorfullButton.m */,
@@ -1328,6 +1339,7 @@
 			files = (
 				65A196BA7E91587F1FE3E1DB95283F57 /* EditImage.xcassets in Resources */,
 				6CFCF9973B760EA31AF56DDB89DD70E9 /* WBGImageEditorViewController.xib in Resources */,
+				1751D0A7203E0B6C004A1B72 /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

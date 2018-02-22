@@ -25,6 +25,7 @@
                 <outlet property="topBar" destination="vKW-ZA-nXo" id="4f1-Hp-06S"/>
                 <outlet property="topBarTop" destination="V7Y-h0-Shc" id="Y3q-lg-gKw"/>
                 <outlet property="undoButton" destination="yeV-aj-vVt" id="CuD-0G-Osx"/>
+                <outlet property="undoTopButton" destination="dWK-Ob-bp1" id="RNB-Br-o5Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -161,11 +162,28 @@
                                         <action selector="sendAction:" destination="-1" eventType="touchUpInside" id="9Z9-uw-HJK"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWK-Ob-bp1">
+                                    <rect key="frame" x="252" y="0.0" width="58" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="Ksj-IW-Npf"/>
+                                        <constraint firstAttribute="width" constant="58" id="tP4-Cs-7i0"/>
+                                    </constraints>
+                                    <inset key="titleEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" image="undo">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="undoAction:" destination="-1" eventType="touchUpInside" id="nfI-Ze-aN6"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.086274509803921567" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.88" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="Li1-F3-HD7" firstAttribute="leading" secondItem="dWK-Ob-bp1" secondAttribute="trailing" constant="2" id="DUP-cW-8Xu"/>
                                 <constraint firstItem="Li1-F3-HD7" firstAttribute="top" secondItem="vKW-ZA-nXo" secondAttribute="top" id="Gd1-4G-UMZ"/>
                                 <constraint firstAttribute="trailing" secondItem="Li1-F3-HD7" secondAttribute="trailing" constant="5" id="Lll-Sj-hSR"/>
+                                <constraint firstItem="dWK-Ob-bp1" firstAttribute="top" secondItem="vKW-ZA-nXo" secondAttribute="top" id="V3x-mH-BSN"/>
                                 <constraint firstItem="U1E-fP-iEK" firstAttribute="leading" secondItem="vKW-ZA-nXo" secondAttribute="leading" id="b3p-OT-0BL"/>
                                 <constraint firstAttribute="height" constant="64" id="g2k-gl-jyQ"/>
                                 <constraint firstItem="U1E-fP-iEK" firstAttribute="top" secondItem="vKW-ZA-nXo" secondAttribute="top" id="i6w-KR-pZk"/>
@@ -220,7 +238,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFs-ic-Afl" customClass="ColorfullButton">
-                            <rect key="frame" x="0.0" y="4.5" width="40" height="40"/>
+                            <rect key="frame" x="0.0" y="4" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="Qa6-pb-Bvf"/>
                                 <constraint firstAttribute="height" constant="40" id="wiV-wL-tQT"/>
@@ -300,5 +318,6 @@
         <image name="paper" width="100" height="100"/>
         <image name="text" width="32" height="32"/>
         <image name="text_selected" width="32" height="32"/>
+        <image name="undo" width="23" height="12"/>
     </resources>
 </document>

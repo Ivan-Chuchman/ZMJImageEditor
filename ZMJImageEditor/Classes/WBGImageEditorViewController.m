@@ -47,6 +47,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
 @property (weak, nonatomic) IBOutlet UIButton *textButton;
 @property (weak, nonatomic) IBOutlet UIButton *clipButton;
 @property (weak, nonatomic) IBOutlet UIButton *paperButton;
+@property (weak, nonatomic) IBOutlet UIButton *undoTopButton;
 
 @property (nonatomic, strong) WBGDrawTool *drawTool;
 @property (nonatomic, strong) WBGTextTool *textTool;
@@ -144,6 +145,8 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     //获取自定制组件 - fecth custom config
     [self configCustomComponent];
     [self.colorPan selectColorButtonForColor:self.colorPan.currentColor];
+    
+    [self manageUndoTopButton];
 }
 
 - (void)configCustomComponent {
@@ -286,6 +289,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
             [weakSelf hiddenColorPan:NO animation:YES];
             weakSelf.currentMode = EditorNonMode;
             weakSelf.currentTool = nil;
+            [weakSelf manageUndoTopButton];
         };
     }
     
@@ -480,6 +484,9 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     if (self.currentMode == EditorDrawMode) {
         WBGDrawTool *tool = (WBGDrawTool *)self.currentTool;
         [tool backToLastDraw];
+    } else if (self.currentMode == EditorNonMode) {
+        [[self textTool] removeLastText];
+        [self manageUndoTopButton];
     }
 }
 
@@ -734,6 +741,10 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     return image;
 }
 
+- (BOOL)manageUndoTopButton {
+    self.undoTopButton.hidden = ([self.textTool subviewsCount] == 0);
+}
+
 @end
 
 #pragma mark - Class WBGWColorPan
@@ -777,6 +788,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
         [self deselectColorButtons];
         [self selectColorSlider];
         self.currentColor = self.colorSlider.valueColor;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kColorPanNotificaiton object:self.currentColor];
     };
     self.colorSlider.thickness = 28;
     //  set thumb size

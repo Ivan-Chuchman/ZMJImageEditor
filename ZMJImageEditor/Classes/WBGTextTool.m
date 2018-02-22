@@ -11,12 +11,13 @@
 #import "UIView+YYAdd.h"
 
 static const CGFloat kTopOffset = 0.f;
-static const CGFloat kTextTopOffset = 20.f;
+//static const CGFloat kTextTopOffset = 20.f;
 static const NSInteger kTextMaxLimitNumber = 100;
 
 @implementation WBGTextTool
 {
     __weak UIImageView *_drawingView;
+    int tag;
 }
 
 - (void)setup {
@@ -25,8 +26,7 @@ static const NSInteger kTextMaxLimitNumber = 100;
     __weak typeof(self)weakSelf = self;
     self.textView = [[_WBGTextView alloc] initWithFrame:CGRectMake(0, kTopOffset, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - kTopOffset)];
     self.textView.textView.textColor = self.editor.colorPan.currentColor;
-    self.textView.textView.font = [UIFont systemFontOfSize:24.f weight:UIFontWeightRegular];
-    //  [UIFont fontWithName:@"OpenSans" size:30];
+    self.textView.textView.font = [UIFont fontWithName:@"OpenSans" size:30];
     self.textView.textView.autocorrectionType = UITextAutocorrectionTypeNo;
     self.editor.backButton.enabled = NO;
     self.editor.undoButton.enabled = NO;
@@ -85,10 +85,37 @@ static const NSInteger kTextMaxLimitNumber = 100;
     view.text = text;
     view.center = [self.editor.imageView.superview convertPoint:self.editor.imageView.center toView:self.editor.drawingView];
     view.userInteractionEnabled = YES;
+    tag++;
+    view.tag = tag;
     
     [self.editor.drawingView addSubview:view];
     
     [WBGTextToolView setActiveTextView:view];
+}
+
+- (void)removeLastText {
+    BOOL isDone = NO;
+    for (int i = tag; i > 0; i--) {
+        for (UIView *subview in self.editor.drawingView.subviews) {
+            if ((subview.tag == i) && ([subview isKindOfClass:[WBGTextToolView class]])) {
+                WBGTextToolView *view = subview;
+                if (view.archerBGView) {
+                    [view.archerBGView removeFromSuperview];
+                }
+                [view removeFromSuperview];
+                isDone = YES;
+                break;
+            }
+        }
+        
+        if (isDone) {
+            break;
+        }
+    }
+}
+
+- (NSInteger)subviewsCount {
+    return [self.editor.drawingView.subviews count];
 }
 
 @end
@@ -111,13 +138,21 @@ static const NSInteger kTextMaxLimitNumber = 100;
         
         __weak typeof(self)weakSelf = self;
 
-        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-        self.effectView = [[UIVisualEffectView alloc] initWithEffect:blur];
-        self.effectView.frame = CGRectMake(0, -kTopOffset, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-        [self addSubview:self.effectView];
+//        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//        self.effectView = [[UIVisualEffectView alloc] initWithEffect:blur];
+//        self.effectView.frame = CGRectMake(0, -kTopOffset, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+//        [self addSubview:self.effectView];
         
-        self.textView = [[UITextView alloc] initWithFrame:CGRectInset(self.bounds, 14, 0)];
-        self.textView.top = kTextTopOffset;
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, -kTopOffset, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        bgView.backgroundColor = [UIColor colorWithWhite:0.75 alpha:0.2];
+        [self addSubview:bgView];
+        
+//        self.textView = [[UITextView alloc] initWithFrame:CGRectInset(self.bounds, 14, 0)];
+        int textViewHeight = 80;
+        int sideInast = 20;
+        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(sideInast, (self.frame.size.height - textViewHeight) / 2, self.frame.size.width - 2 * sideInast, textViewHeight)];
+        self.textView.textAlignment = NSTextAlignmentCenter;
+//        self.textView.top = kTextTopOffset;
         self.textView.scrollEnabled = YES;
         self.textView.returnKeyType = UIReturnKeyDone;
         self.textView.delegate = self;
@@ -153,7 +188,7 @@ static const NSInteger kTextMaxLimitNumber = 100;
     
     self.hidden = YES;
     [UIView animateWithDuration:keyboardAnimationDuration delay:keyboardAnimationDuration options:keyboardAnimationCurve animations:^{
-        self.textView.height = [UIScreen mainScreen].bounds.size.height - keyboardRect.size.height - kTextTopOffset;
+//        self.textView.height = [UIScreen mainScreen].bounds.size.height - keyboardRect.size.height - kTextTopOffset;
         self.top = kTopOffset;
         
     } completion:^(BOOL finished) {}];
