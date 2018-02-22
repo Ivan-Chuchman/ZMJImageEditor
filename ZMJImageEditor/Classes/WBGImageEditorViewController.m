@@ -741,7 +741,7 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     return image;
 }
 
-- (BOOL)manageUndoTopButton {
+- (void)manageUndoTopButton {
     self.undoTopButton.hidden = ([self.textTool subviewsCount] == 0);
 }
 
