@@ -58,6 +58,8 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
 @property (nonatomic, assign) BOOL barsHiddenStatus;
 @property (nonatomic, strong) WBGMoreKeyboard *keyboard;
 
+@property (nonatomic, strong) UIFont *textToolFont;
+
 @end
 
 @implementation WBGImageEditorViewController
@@ -85,13 +87,21 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
     return [self initWithImage:image delegate:nil dataSource:nil];
 }
 
-- (id)initWithImage:(UIImage*)image delegate:(id<WBGImageEditorDelegate>)delegate dataSource:(id<WBGImageEditorDataSource>)dataSource;
+- (id)initWithImage:(UIImage*)image delegate:(id<WBGImageEditorDelegate>)delegate dataSource:(id<WBGImageEditorDataSource>)dataSource {
+    return [self initWithImage:image delegate:delegate dataSource:dataSource textToolFont:nil];
+}
+
+- (id)initWithImage:(UIImage*)image delegate:(id<WBGImageEditorDelegate>)delegate dataSource:(id<WBGImageEditorDataSource>)dataSource textToolFont:(UIFont*)textToolFont
 {
     self = [self init];
     if (self){
         _originImage = image;
         self.delegate = delegate;
         self.dataSource = dataSource;
+        
+        if (textToolFont) {
+            self.textToolFont = textToolFont;
+        }
     }
     return self;
 }
@@ -284,6 +294,9 @@ NSString * const kColorPanNotificaiton = @"kColorPanNotificaiton";
 - (WBGTextTool *)textTool {
     if (_textTool == nil) {
         _textTool = [[WBGTextTool alloc] initWithImageEditor:self];
+        if (self.textToolFont) {
+            _textTool.textViewFont = self.textToolFont;
+        }
         __weak typeof(self)weakSelf = self;
         _textTool.dissmissTextTool = ^(NSString *currentText) {
             [weakSelf hiddenColorPan:NO animation:YES];

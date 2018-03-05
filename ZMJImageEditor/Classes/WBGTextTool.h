@@ -12,6 +12,7 @@
 @interface WBGTextTool : WBGImageToolBase
 @property (nonatomic, copy) void(^dissmissTextTool)(NSString *currentText);//, BOOL isEditAgain);
 @property (nonatomic, strong) _WBGTextView *textView;
+@property (nonatomic, strong) UIFont *textViewFont;
 @property (nonatomic, assign) BOOL isEditAgain;
 @property (nonatomic, copy)   void(^editAgainCallback)(NSString *text);
 

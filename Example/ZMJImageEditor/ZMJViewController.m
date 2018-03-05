@@ -26,7 +26,7 @@
 
 - (IBAction)editButtonAction:(UIBarButtonItem *)sender {
     if (self.imageView.image) {
-        WBGImageEditor *editor = [[WBGImageEditor alloc] initWithImage:_imageView.image delegate:self dataSource:self];
+        WBGImageEditor *editor = [[WBGImageEditor alloc] initWithImage:_imageView.image delegate:self dataSource:self textToolFont:[UIFont systemFontOfSize:30]];
         [self presentViewController:editor animated:YES completion:nil];
     } else {
         NSLog(@"木有图片");

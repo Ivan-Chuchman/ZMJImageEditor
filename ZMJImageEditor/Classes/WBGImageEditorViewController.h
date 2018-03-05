@@ -39,4 +39,5 @@ extern NSString * const kColorPanNotificaiton;
 
 - (void)editTextAgain;
 - (void)hiddenTopAndBottomBar:(BOOL)isHide animation:(BOOL)animation;
+- (id)initWithImage:(UIImage*)image delegate:(id<WBGImageEditorDelegate>)delegate dataSource:(id<WBGImageEditorDataSource>)dataSource textToolFont:(UIFont*)textToolFont;
 @end

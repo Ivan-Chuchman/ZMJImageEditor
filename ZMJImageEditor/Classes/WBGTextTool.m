@@ -26,7 +26,11 @@ static const NSInteger kTextMaxLimitNumber = 100;
     __weak typeof(self)weakSelf = self;
     self.textView = [[_WBGTextView alloc] initWithFrame:CGRectMake(0, kTopOffset, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - kTopOffset)];
     self.textView.textView.textColor = self.editor.colorPan.currentColor;
-    self.textView.textView.font = [UIFont fontWithName:@"OpenSans-Bold" size:30];
+    if (self.textViewFont) {
+        self.textView.textView.font = self.textViewFont;
+    } else {
+        self.textView.textView.font = [UIFont systemFontOfSize:24.f weight:UIFontWeightRegular];
+    }
     self.textView.textView.autocorrectionType = UITextAutocorrectionTypeNo;
     self.editor.backButton.enabled = NO;
     self.editor.undoButton.enabled = NO;

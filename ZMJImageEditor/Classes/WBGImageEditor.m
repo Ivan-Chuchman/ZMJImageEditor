@@ -30,6 +30,11 @@
     return [[WBGImageEditorViewController alloc] initWithImage:image delegate:delegate dataSource:dataSource];
 }
 
+- (id)initWithImage:(UIImage*)image delegate:(id<WBGImageEditorDelegate>)delegate dataSource:(id<WBGImageEditorDataSource>)dataSource textToolFont:(UIFont*)textToolFont
+{
+    return [[WBGImageEditorViewController alloc] initWithImage:image delegate:delegate dataSource:dataSource textToolFont:textToolFont];
+}
+
 - (id)initWithDelegate:(id<WBGImageEditorDelegate>)delegate
 {
     return [[WBGImageEditorViewController alloc] initWithDelegate:delegate];
